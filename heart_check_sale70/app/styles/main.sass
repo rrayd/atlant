@@ -1,0 +1,135 @@
+@import compass
+@import "compass/css3/transition"
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,900&amp;subset=cyrillic')
+
+.browserupgrade
+  margin: 0.2em 0
+  background: #ccc
+  color: #000
+  padding: 0.2em 0
+
+// platforms optimisation breakpoints
+$mobile-width: 720px;
+$desktop-width-small: 1280px;
+$desktop-width-big: 1440px;
+$micro-height: 670px;
+@mixin micro-height
+  @media (max-height: #{$micro-height})
+    @content
+@mixin desktop-average
+  @media (min-width: #{$desktop-width-small - 1}) and (max-width: #{$desktop-width-big - 1})
+    @content
+@mixin mobile
+  @media (min-width: #{$mobile-width}) and  (max-width: #{$desktop-width-small - 1})
+    @content
+@mixin mobile-small
+  @media (max-width: #{$mobile-width})
+    @content
+
+// atlant template vars
+$at-global-padding: 0 21% 0 21%
+$at-gp-desktop-average: 0 24% 0 24%
+$at-gp-mobile: 0 11% 0 11%
+$at-gp-mobile-small: 0 8% 0 8%
+
+// atlant color cheme
+$at-blue: #0066b3
+$at-red: #de0518
+$at-persian: #23278c
+
+// atlant font-size cheme
+$f-size: 18px
+$f-size-bigest: 161%
+$f-size-big: 138%
+$f-size-normal: 100%
+$f-size-small: 61%
+$f-size-smallest: 38%
+
+//
+// atlant main styles
+
+body
+  height: 100%
+  margin: 0
+  padding: 0
+  background-color: #fff
+  font-family: 'Roboto', sans-serif
+  font-size: $f-size
+  color: #000
+  @inlcude mobile
+    -webkit-overflow-scrolling: touch
+  @inlcude mobile-small
+    -webkit-overflow-scrolling: touch
+
+// ui atoms
+.at-button
+  display: inline-block
+  text-decoration: none
+  margin: 0
+  padding: 14px 22px
+  font-size: $f-size-normal
+  font-weight: 400
+  +border-radius(4px)
+  @include mobile
+    font-size: $f-size-big
+  &.red
+    color: #fff
+    background-color: $at-red
+    &:hover
+      background-color: #000
+  &.white
+    color: $at-red
+    background-color: #fff
+    &:hover
+      background-color: #000
+.at-nowrap
+  white-space: nowrap
+.at-main-width
+  position: relative
+  width: $desktop-width-big
+  height: 100%
+  margin: 0 auto
+
+// fix header
+header
+  display: block
+  position: fixed
+  top: 0
+  width: 100%
+  height: 125px
+  z-index: 99
+  background-color: rgba(255,255,255,0.9)
+  .at-logo
+    position: absolute
+    left: 0
+  .at-contacts
+    position: absolute
+    right: 0
+    .telephone
+      display: inline-block
+      color: $at-persian
+      vertical-align: middle
+
+
+
+// sections
+.at-section
+  color: #000
+  padding: $at-global-padding
+  margin-bottom: 3%
+  @include desktop-average
+    padding: $at-gp-desktop-average
+  @include mobile
+    padding: $at-gp-mobile
+  @include mobile-small
+    padding: $at-gp-mobile-small
+  h2
+    color: $at-red
+    font-weight: 900
+    font-size: 180%
+    @include mobile
+      text-align: center
+  strong
+    color: $at-red
+
+// reg form
