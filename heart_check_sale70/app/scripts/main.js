@@ -41,14 +41,11 @@ $( document ).ready(function() {
 	// vanilla functions
 	function al_app () {
 
-		var hD = document.getElementById("atlantDancer");
+		var hD = document.getElementById('atlantDancer');
 
-		window.addEventListener("scroll", function() {
+		window.addEventListener('scroll', function() {
 			var scrolledHeight = window.pageYOffset;
-			var limit = hD.offsetTop + hD.offsetHeight;
-			if ( scrolledHeight > hD.offsetTop && scrolledHeight <= limit ) {
-			  hD.style.backgroundPositionY =  ( scrolledHeight + 1420 ) / 3 + 'px';
-			  }
+		  	hD.style.marginTop = 65 + scrolledHeight / -6.66 + 'vh';
 		});
 
 	};

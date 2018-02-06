@@ -1,6 +1,6 @@
 @import compass
 @import "compass/css3/transition"
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic')
 
 .browserupgrade
   margin: 0.2em 0
@@ -108,6 +108,7 @@ h2
 .at-main-width
   position: relative
   width: 90%
+  max-width: $desktop-width-big
   margin: 0 auto
   box-sizing: border-box
 .at-section
@@ -151,9 +152,9 @@ header
 
 // sections
 .at-types
-  height: 160vh
+  height: 100vh
   margin-top: $at-header-height
-  background: url('/images/sec01bg-full.jpg') no-repeat center top
+  background: url("/images/sec01bg-full.jpg") no-repeat center top -83px
   background-size: cover
   h1
     margin: 0
@@ -163,20 +164,59 @@ header
     .at-main-width
       padding-top: 19px
   .at-heartBeats
-    position: absolute
-    bottom: 3px
+    position: relative
+    margin-top: 65vh
     width: 100%
-    height: 100%
-    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/PjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA3MCA0NTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDcwIDQ1MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIHN0eWxlPSJmaWxsOiMwRTMzNkY7IiBkPSJNNzAsNjBjLTEsMC0yLjA5Ni02Ljc3Ny0yLjMwNC0xMC4zMjFDNjYuODgzLDM1Ljg3OCw2NC42MTUsMCw2MywwYy0yLDAtNCw0My00LDQ0cy0xLTEtMi0zcy0yLTItMi0ycy0zLDAtNCwwcy0yLTYtMy02cy0zLDYtMyw2SDI4YzAsMC0zLTMtNy0zcy03LDMtNywzUzQsMzksMywzOXMtMSw0LTEsMTBTMCw2MCwwLDYwdjM5Mmg3MFY2MHoiLz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PC9zdmc+')
-    background-repeat: repeat-x
-    background-position: bottom
-    background-size: 100px
-    background-position-x: 0
+    height: 10000px
+    background-color: #0E336F
     mix-blend-mode: multiply
-
-//  slooooooooooooooooooowly future
-//  animation: heartBeatsHorison 19s infinite
-//  animation-timing-function: linear
-//  @keyframes heartBeatsHorison
-//   0%
-//    background-position-x: 100px
+    .at-heartBeatsTop
+      position: absolute
+      bottom: 100%
+      width: 100%
+      height: 64px
+      background: url('/images/beats.svg') repeat-x bottom left 0
+  .at-types-items
+    position: absolute
+    bottom: 150px
+    width: 100%
+    height: 30%
+  .at-type
+    display: inline-block
+    position: relative
+    width: 49%
+    min-height: 5px
+    text-align: center
+    .handheart
+      height: 200px
+    h2
+      color: #fff
+      font-weight: 300
+      font-size: 300%
+  .at-type-popup
+    display: none
+  .at-type-prices
+    position: absolute
+    bottom: 0
+    width: 100%
+    height: 150px
+    font-weight: 300
+    color: #ffffff
+    background-color: $at-blue
+    .rouble
+      display: inline-block
+      width: 16px
+      height: 23px
+    .pricenew
+      font-size: 280%
+    .priceold
+      position: relative
+      width: 76px
+      font-size: 129%
+      margin: 0 auto
+    .oldprice
+      position: absolute
+      left: 0
+      top: 10px
+      width: 77px
+      height: 15px
