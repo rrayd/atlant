@@ -10,9 +10,11 @@ $( document ).ready(function() {
 			}, 1000);
 		}
 	});
-	// invite form masks
+
+	// go form masks
 	$('#telephone').mask('+99999999999');
-	// invite form validate
+
+	// go form validate
 	 $('#al-invite').validate({
 		rules: {
 			'name': 'required',
@@ -38,7 +40,17 @@ $( document ).ready(function() {
 
 	// vanilla functions
 	function al_app () {
-		console.log('Hey heart!')
+
+		var hD = document.getElementById("atlantDancer");
+
+		window.addEventListener("scroll", function() {
+			var scrolledHeight = window.pageYOffset;
+			var limit = hD.offsetTop + hD.offsetHeight;
+			if ( scrolledHeight > hD.offsetTop && scrolledHeight <= limit ) {
+			  hD.style.backgroundPositionY =  ( scrolledHeight + 1420 ) / 3 + 'px';
+			  }
+		});
+
 	};
 	// run vanilla app
 	al_app();
