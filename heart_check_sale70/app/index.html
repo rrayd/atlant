@@ -27,7 +27,7 @@
         <div class="at-contacts"><span class="telephone">+7 (812) 982-16-90</span><a href="#go" class="at-button">Записаться на прием</a></div>
       </div>
     </header>
-    <article class="at-section at-types">
+    <article id="typeDancer" class="at-section at-types">
       <h1>
         <div class="at-main-width">
           Обследование сердечно-сосудистой<br>системы со <span class="at-text-red">скидкой 70%</span>
@@ -76,8 +76,70 @@
       </div>
     </article>
     <article class="at-section at-best">
-      YOBA
+      <div class="at-main-width">
+        <h2>Доверяйте лучшим</h2>
+        <div class="at-main-md"></div>
+        <div class="at-main-md-desc">
+          <h3>Главный врач Медицинского центра «Атлант»<br>Врач-кардиолог.<br>Кандидат медицинских наук.</h3>
+          <p>1987 г. окончила лечебный факультет Ереванского Государственного Медицинского института.</p>
+          <p>В 1994 г. защитила кандидатскую диссертацию.</p>
+          <p>Работала в отделениях анестезиологии и реанимации, неотложной кардиологии, функциональной диагностики клинических больниц городов Еревана и Санкт-Петербурга.</p>
+          <p>Работала на кафедре кардиологии Государственного института усовершенствования врачей г. Ереван.</p>
+          <p>Имеет большой опыт в общей терапии и кардиологии.</p>
+        </div>
+      </div>
     </article>
+    <article id="questionDancer" class="at-section at-healty">
+      <div class="at-main-width">
+        <div class="at-healty-boxes">
+          <div class="at-healty-box-one">
+            <div class="at-healty-box-two"></div>
+          </div>
+        </div>
+        <div class="at-healty-question">
+          <h3>А здоровое ли у Вас сердце?</h3>
+          <p>У многих из нас время от времени возникает подозрение – а здоровое ли у меня сердце? В современном обществе стало важным, когда человек знает всё о своём здоровье. Однако множество популярных статей и тематических форумов на просторах сети не могут дать адекватный ответ о состоянии сердечнососудистой системы. Ответ может дать только врач-кардиолог.</p>
+          <svg class="at-sprite clocks">
+            <use xlink:href="/images/atlant.svg?#clocks" />
+          </svg>
+          <div class="time">
+            <p>
+              <strong>20 минут</strong>
+              длится обследование в нашем центре
+            </p>
+            <p>
+              <strong>1 час</strong>
+              проходит первичный прием врача-кардиолога
+            </p>
+          </div>
+          <p class="gogogo">
+            <strong>Обследуйте сердце и живите спокойно!</strong>
+          </p>
+        </div>
+      </div>
+    </article>
+    <div class="at-section at-gotoform">
+      <div class="at-main-width">
+        <h2 class="at-text-red">Запишитесь на прием</h2>
+        <form id="at-invite" method="post" class="al-invite">
+          <div class="al-input-container">
+            <input name="name" type="text" class="al-input-text" id="name" placeholder="Имя*" required data-rule-minlength="3" data-msg-minlength="Минимум 3 символа" data-msg="Заполните поле">
+          </div>
+          <div class="al-input-container">
+            <input name="telephone" type="text" class="al-input-text" id="telephone" placeholder="Телефон в формате +79...*" required data-msg="Заполните поле">
+          </div>
+          <div class="al-check-container">
+            <input name="agree_data" type="checkbox" id="id_agree_data">&nbsp;&nbsp;&nbsp;<label for="id_agree_data">Записываясь на прием, вы подтверждаете <a href="#" class="agree-link" onclick="$('#personal-data-agreement').slideToggle(); return false;">согласие на обработку персональных данных</a></label>
+            <div id="personal-data-agreement" class="agreement">
+              <p>
+                Настоящим я, действуя свободно, своей волей и в своем интересе, даю свое согласие ООО «Атлант...
+              </p>
+            </div>
+          </div>
+          <div class="al-input-container"><input type="submit" class="al-button red submit" id="submit" value="Отправить заявку"/></div>
+        </form>
+      </div>
+    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

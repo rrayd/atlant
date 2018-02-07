@@ -45,8 +45,9 @@ $at-persian: #23278c
 
 // atlant font-size cheme
 $f-size: 18px
-$f-size-bigest: 161%
-$f-size-big: 138%
+$f-size-bigest: 260%
+$f-size-big: 161%
+$f-size-mid: 107%
 $f-size-normal: 100%
 $f-size-small: 61%
 $f-size-smallest: 38%
@@ -73,6 +74,8 @@ h1
   font-size: $f-size-bigest
 h2
   font-size: $f-size-big
+h3
+  font-size: $f-size-mid
 .at-text-blue
   color: $at-blue
 .at-text-red
@@ -175,7 +178,7 @@ header
       bottom: 100%
       width: 100%
       height: 64px
-      background: url('/images/beats.svg') repeat-x bottom left 0
+      background: url('data:image/svg+xml;base64,PHN2ZyBpZD0iYmVhdHMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDYyIDUzLjE0MyI+PHRpdGxlPmJlYXRzPC90aXRsZT48cGF0aCBkPSJNNjIsNTMuMTQzYy0uODg2LDAtMS44NTYtNi0yLjA0MS05LjE0MkM1OS4yMzksMzEuNzc4LDU3LjIzLDAsNTUuOCwwYy0xLjc3MSwwLTMuNTQzLDM4LjA4Ni0zLjU0MywzOC45NzFzLS44ODYtLjg4NS0xLjc3MS0yLjY1Ny0xLjc3Mi0xLjc3MS0xLjc3Mi0xLjc3MUg0NS4xNzFjLS44ODUsMC0xLjc3MS01LjMxNC0yLjY1Ny01LjMxNHMtMi42NTcsNS4zMTQtMi42NTcsNS4zMTRIMjQuOGE5Ljc4MSw5Ljc4MSwwLDAsMC02LjItMi42NTcsOS43ODEsOS43ODEsMCwwLDAtNi4yLDIuNjU3SDIuNjU3Yy0uODg2LDAtLjg4NiwzLjU0My0uODg2LDguODU3QTI5LjI0NiwyOS4yNDYsMCwwLDEsMCw1My4xNDNaIiBzdHlsZT0iZmlsbDojMGUzMzZmIi8+PC9zdmc+') repeat-x bottom left 0
   .at-types-items
     position: absolute
     bottom: 150px
@@ -220,3 +223,92 @@ header
       top: 10px
       width: 77px
       height: 15px
+.at-best
+  h2
+    margin-top: 60px
+    font-size: 250%
+  .at-main-width
+    width: 64%
+  .at-main-md
+    display: inline-block
+    width: 240px
+    height: 240px
+    background: url('/images/sedrakyan.jpg') no-repeat center center
+    background-size: cover
+    vertical-align: top
+    +border-radius(120px)
+  .at-main-md-desc
+    display: inline-block
+    width: 61%
+    padding: 5px 0 0 30px
+    vertical-align: top
+    h3
+      margin-top: 0
+    p
+      padding: 0
+      margin: 0
+      font-size: 81%
+.at-healty
+  margin-top: 80px
+  height: 50vh
+  background: url('/images/hands.jpg') no-repeat center top -110px
+  background-size: cover
+  overflow: visible
+  .at-main-width
+    position: relative
+    width: 64%
+  .at-healty-boxes
+    position: absolute
+    left: 247px
+    top: 0
+    width: 61%
+    height: 480px
+  .at-healty-box-one
+    margin-left: -40px
+    margin-top: -40px
+    padding-top: 40px
+    width: 126%
+    height: 480px
+    background-color: #0E336F
+    mix-blend-mode: multiply
+  .at-healty-box-two
+    margin-left: 40px
+    margin-top: 0px
+    width: 87%
+    height: 504px
+    background-color: #0E336F
+    mix-blend-mode: multiply
+  .at-healty-question
+    position: absolute
+    left: 274px
+    top: 0
+    width: 61%
+    height: 480px
+    color: #ffffff
+    p
+      font-size: 81%
+    .gogogo
+      strong
+        position: absolute
+        bottom: 20px
+        font-size: $f-size-big
+    .clocks
+      display: inline-block
+      width: 170px
+      height: 170px
+      margin: 10px 0 0 -88px
+    .time
+      display: inline-block
+      width: 77%
+      margin-left: 28px
+      vertical-align: top
+      p
+        font-size: 100%
+        strong
+          display: block
+          margin-top: 0
+          font-size: $f-size-big
+.at-gotoform
+  h2
+    margin-top: 60px
+    font-size: 250%

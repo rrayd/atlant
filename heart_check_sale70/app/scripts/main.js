@@ -39,16 +39,22 @@ $( document ).ready(function() {
 	});
 
 	// vanilla functions
-	function al_app () {
+	function at_app () {
 
 		var hD = document.getElementById('atlantDancer');
+		var bD = document.getElementById('questionDancer');
+        var tD = document.getElementById('typeDancer');
 
 		window.addEventListener('scroll', function() {
 			var scrolledHeight = window.pageYOffset;
-		  	hD.style.marginTop = 65 + scrolledHeight / -6.66 + 'vh';
+		  	hD.style.marginTop = 65 + scrolledHeight / -9.99 + 'vh';
+            tD.style.backgroundPositionY = -110 + scrolledHeight / 6 + 'px';
+		  	if ((scrolledHeight + window.innerHeight) > bD.offsetTop) {
+            	bD.style.backgroundPositionY = -110 + scrolledHeight / 6 + 'px';
+		  	}
 		});
 
 	};
 	// run vanilla app
-	al_app();
+	at_app();
 });
