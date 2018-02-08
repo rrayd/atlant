@@ -15,7 +15,7 @@ $( document ).ready(function() {
 	$('#telephone').mask('+99999999999');
 
 	// go form validate
-	 $('#al-invite').validate({
+	 $('#at-invite').validate({
 		rules: {
 			'name': 'required',
 			'lastname': 'required',

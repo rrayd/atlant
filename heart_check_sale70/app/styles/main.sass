@@ -230,6 +230,7 @@ header
   .at-main-width
     width: 64%
   .at-main-md
+    position: relative
     display: inline-block
     width: 240px
     height: 240px
@@ -237,6 +238,12 @@ header
     background-size: cover
     vertical-align: top
     +border-radius(120px)
+    span
+      width: 100%
+      position: absolute
+      bottom: -30px
+      font-size: 70%
+      text-align: center
   .at-main-md-desc
     display: inline-block
     width: 61%
@@ -246,11 +253,12 @@ header
       margin-top: 0
     p
       padding: 0
-      margin: 0
+      margin: 0 0 7px 0
       font-size: 81%
 .at-healty
   margin-top: 80px
   height: 50vh
+  min-height: 620px
   background: url('/images/hands.jpg') no-repeat center top -110px
   background-size: cover
   overflow: visible
@@ -262,6 +270,7 @@ header
     left: 247px
     top: 0
     width: 61%
+    min-width: 500px
     height: 480px
   .at-healty-box-one
     margin-left: -40px
@@ -283,6 +292,7 @@ header
     left: 274px
     top: 0
     width: 61%
+    min-width: 500px
     height: 480px
     color: #ffffff
     p
@@ -308,7 +318,40 @@ header
           display: block
           margin-top: 0
           font-size: $f-size-big
-.at-gotoform
+.at-form
   h2
     margin-top: 60px
     font-size: 250%
+  .at-split-input
+    width: 100%
+    .at-input-container
+      position: relative
+      display: inline-block
+      margin-bottom: 30px
+      width: 47%
+      height: 70px
+      background-color: #0E336F
+      mix-blend-mode: multiply
+      &:last-child
+        margin-left: 30px
+    .at-input-deco
+      position: absolute
+      left: -3%
+      top: -2%
+      width: 101%
+      height: 110%
+      margin-right: 10px
+      background-color: #0E336F
+      mix-blend-mode: multiply
+    .at-input-text
+      position: absolute
+      top: 10px
+      left: 0
+      width: 90%
+      z-index: 1
+      background: transparent
+      color: #ffffff
+      font-weight: 300
+      font-size: 200%
+      border: 0
+      text-align: center
