@@ -127,22 +127,26 @@
           <div class="at-split-input">
             <div class="at-input-container">
               <div class="at-input-deco"></div>
-              <input name="name" type="text" class="at-input-text" id="name" placeholder="Имя*" required data-rule-minlength="3" data-msg-minlength="Минимум 3 символа" data-msg="Заполните поле">
+              <input name="name" type="text" class="at-input-text" id="name" placeholder="Имя" required data-rule-minlength="3" data-msg-minlength="Минимум 3 символа" data-msg="Заполните поле">
             </div>
             <div class="at-input-container">
               <div class="at-input-deco"></div>
-              <input name="telephone" type="text" class="at-input-text" id="telephone" placeholder="Телефон в формате +79...*" required data-msg="Заполните поле">
+              <input name="telephone" type="text" class="at-input-text" id="telephone" placeholder="Телефон в формате +7" required data-msg="Заполните поле">
             </div>
           </div>
-          <div class="at-check-container">
-            <input name="agree_data" type="checkbox" id="id_agree_data">&nbsp;&nbsp;&nbsp;<label for="id_agree_data">Записываясь на прием, вы подтверждаете <a href="#" class="agree-link" onclick="$('#personat-data-agreement').slideToggle(); return false;">согласие на обработку персональных данных</a></label>
-            <div id="personat-data-agreement" class="agreement">
-              <p>
-                Настоящим я, действуя свободно, своей волей и в своем интересе, даю свое согласие ООО «Атлант...
-              </p>
+          <div class="at-submit-container">
+            <div class="at-check-container">
+              Записываясь на прием, вы подтверждаете <a href="#" class="agree-link" onclick="$('#personat-data-agreement').slideToggle(); return false;">согласие на обработку персональных данных</a>
+              <div id="personat-data-agreement" class="agreement" style="display: none">
+                <p>
+                  Настоящим я, действуя свободно, своей волей и в своем интересе, даю свое согласие ООО «Атлант...
+                </p>
+              </div>
+            </div>
+            <div class="at-input-container">
+              <input type="submit" class="at-button submit" id="submit" value="Отправить заявку"/>
             </div>
           </div>
-          <div class="at-input-container"><input type="submit" class="at-button red submit" id="submit" value="Отправить заявку"/></div>
         </form>
       </div>
     </div>

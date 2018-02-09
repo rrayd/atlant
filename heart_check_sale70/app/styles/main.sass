@@ -66,6 +66,8 @@ body
     -webkit-overflow-scrolling: touch
   @inlcude mobile-small
     -webkit-overflow-scrolling: touch
+input
+  font-family: 'Open Sans', sans-serif
 
 // ui atoms
 h1, h2
@@ -91,7 +93,7 @@ h3
   color: #ffffff
   +border-radius(4px)
   &:hover
-    background-color: darken($at-red, 10%)
+    background-color: lighten($at-red, 10%)
     -webkit-transform: translateZ(0px)
     animation: heartBreake 1.5s ease infinite
 @keyframes heartBreake
@@ -319,9 +321,16 @@ header
           margin-top: 0
           font-size: $f-size-big
 .at-form
+  min-height: 600px
+  padding-top: 200px
   h2
     margin-top: 60px
+    margin-bottom: 30px
     font-size: 250%
+  .req
+    margin-bottom: 40px
+    font-size: 80%
+    color: $at-persian
   .at-split-input
     width: 100%
     .at-input-container
@@ -334,12 +343,21 @@ header
       mix-blend-mode: multiply
       &:last-child
         margin-left: 30px
+      label.error
+        display: inline-block
+        position: absolute
+        z-index: 99
+        top: -10px
+        right: 0px
+        background-color: $at-red
+        color: #ffffff
+        padding: 21px
     .at-input-deco
       position: absolute
-      left: -3%
-      top: -2%
-      width: 101%
-      height: 110%
+      left: 1%
+      top: -7%
+      width: 97%
+      height: 124%
       margin-right: 10px
       background-color: #0E336F
       mix-blend-mode: multiply
@@ -347,7 +365,7 @@ header
       position: absolute
       top: 10px
       left: 0
-      width: 90%
+      width: 100%
       z-index: 1
       background: transparent
       color: #ffffff
@@ -355,3 +373,23 @@ header
       font-size: 200%
       border: 0
       text-align: center
+  .at-submit-container
+    position: absolute
+    right: 56px
+    .at-check-container
+      position: relative
+      display: inline-block
+      width: 300px
+      font-size: 70%
+      vertical-align: middle
+      .agreement
+        position: absolute
+        top: 100%
+        left: 0
+    .at-input-container
+      display: inline-block
+      vertical-align: middle
+    .at-button
+      border: 0
+      font-size: $f-size-normal
+      cursor: pointer
