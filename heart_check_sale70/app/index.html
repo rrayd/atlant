@@ -17,7 +17,7 @@
       <p>Вы используете устаревший браузер. <a href="http://browsehappy.com/">Обновите свой браузер</a>, чтобы получить лучший опыт.</p>
     <![endif]-->
     
-    <header>
+    <header id="atHeader">
       <div class="at-main-width">
         <div class="at-logotype">
           <svg class="at-sprite logotype">
@@ -27,37 +27,48 @@
         <div class="at-contacts"><span class="telephone">+7 (812) 982-16-90</span><a href="#go" class="at-button">Записаться на прием</a></div>
       </div>
     </header>
-    <article id="typeDancer" class="at-section at-types">
+    <article id="atMainS" class="at-section at-types">
       <h1>
         <div class="at-main-width">
           Обследование сердечно-сосудистой<br>системы со <span class="at-text-red">скидкой 70%</span>
         </div>
       </h1>
-      <div id="atlantDancer" class="at-heartBeats">
+      <div id="atCardio" class="at-heartBeats">
         <div class="at-heartBeatsTop"></div>
       </div>
-      <div class="at-types-items">
+      <div id="atTypesContainer" class="at-types-items">
         <div class="at-main-width">
           <div class="at-type">
-            <svg class="at-sprite handheart">
-              <use xlink:href="/images/atlant.svg?#handheart" />
+            <svg class="at-sprite zoomheart">
+              <use xlink:href="/images/atlant.svg?#zoomheart" />
             </svg>
             <h2>Комплексное</h2>
-            <a class="at-type-wtf">Что входит?</a>
-            <p class="at-type-popup">
+            <a class="at-button at-type-wtf" data-get-desc-for="complex">Список исследований</a>
+            <div class="at-popup at-type-popup complex">
               <ul>
                 <li>Прием у кардиолога высшей категории;</li>
                 <li>Электрокардиография (ЭКГ) сердца с расшифровкой;</li>
                 <li>Составление плана лечения.</li>
               </ul>
-            </p>
+            </div>
           </div>
           <div class="at-type">
-
+            <svg class="at-sprite doubleheart">
+              <use xlink:href="/images/atlant.svg?#doubleheart" />
+            </svg>
+            <h2>Расширенное</h2>
+            <a class="at-button at-type-wtf" data-get-desc-for="extended">Список исследований</a>
+            <div class="at-popup at-type-popup extended">
+              <ul>
+                <li>Прием у кардиолога высшей категории;</li>
+                <li>Электрокардиография (ЭКГ) сердца с расшифровкой;</li>
+                <li>Составление плана лечения.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div class="at-type-prices">
+      <div id="atTypePrices" class="at-type-prices">
         <div class="at-main-width">
           <div class="at-type">
             <div class="pricenew">750
@@ -71,7 +82,18 @@
               </svg>
             </div>
           </div>
-          <div class="at-type"></div>
+          <div class="at-type">
+            <div class="pricenew">1370
+              <svg class="at-sprite rouble">
+                <use xlink:href="/images/atlant.svg?#rouble" />
+              </svg>
+            </div>
+            <div class="priceold">4560
+              <svg class="at-sprite oldprice">
+                <use xlink:href="/images/atlant.svg?#oldprice" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </article>
@@ -91,7 +113,7 @@
         </div>
       </div>
     </article>
-    <article id="questionDancer" class="at-section at-healty">
+    <article id="atQuestor" class="at-section at-healty">
       <div class="at-main-width">
         <div class="at-healty-boxes">
           <div class="at-healty-box-one">
