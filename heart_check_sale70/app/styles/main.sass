@@ -111,8 +111,10 @@ h3
     @include transform(scale(1.05))
   25%
     @include transform(scale(0.98))
-  87.5%
-    @include transform(scale(0.98))
+  32%
+    @include transform(scale(1.02))
+  37%
+    @include transform(scale(1))
   100%
     @include transform(scale(1))
 
@@ -126,9 +128,57 @@ h3
   position: relative
   overflow: hidden
 .at-popup
-  display: none
   position: absolute
-
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: #ffffffe6
+  text-align: left
+  padding: 25px 60px 25px 40px
+  opacity: 0
+  +border-radius(4px)
+  -webkit-transform: translateZ(0px)
+  @include transform (scale(0))
+  @include transition(all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1))
+  &.show
+    @include transform (scale(1))
+    opacity: 1
+  .at-popup-close
+    position: absolute
+    right: 20px
+    top: 20px
+    width: 30px
+    height: 30px
+    cursor: pointer
+    opacity: 0.7
+    &:hover
+      opacity: 1
+  .at-popup-footer
+    position: absolute
+    bottom: 30px
+    left: 0
+    right: 0
+    height: auto
+    text-align: center
+  ul
+    margin: 0
+    padding: 0
+    font-size: $f-size-normal
+  li
+    position: relative
+    list-style: none
+    margin-bottom: 11px
+  li:before
+    position: absolute
+    top: 0
+    right: 100%
+    margin-right: 25px
+    width: 30px
+    height: 30px
+    content: " "
+    background: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDUuNjYyIDEyMi45MDIiPjx0aXRsZT5taWNyb2hlYXJ0PC90aXRsZT48cGF0aCBkPSJNNzIuODMxLDI0LjQ1MWMtNDQuNDMtNDkuOTg3LTgzLjkyNCwwLTY0LjE3OCwzOS45OXM2NC4xNzgsNTQuOTg2LDY0LjE3OCw1NC45ODYsNDQuNDMxLTE1LDY0LjE3OC01NC45ODZTMTE3LjI2Mi0yNS41MzYsNzIuODMxLDI0LjQ1MVoiIHN0eWxlPSJmaWxsOiNmZTU1NzgiLz48cGF0aCBkPSJNMjUuMTQxLDY0LjQzOUMxMi44MjMsMzkuNDk0LDIzLjU1NiwxMC42NjEsNDQuMTYsNC42MjgsMTMuNjA2LTMuNTA4LTYuNjQyLDMzLjQ2NCw4LjY1Myw2NC40MzljMTkuNzQ3LDM5Ljk5LDY0LjE3OCw1NC45ODYsNjQuMTc4LDU0Ljk4NnMzLjE5My0xLjA3OCw4LjI0NC0zLjQyNEM2Ny4yNzYsMTA5LjU5MiwzOS42LDkzLjcxMywyNS4xNDEsNjQuNDM5WiIgc3R5bGU9ImZpbGw6I2ZlM2Y2NyIvPjxwYXRoIGQ9Ik0xNDAuMDgxLDY1Ljk5NGE1Mi45ODUsNTIuOTg1LDAsMCwwLDQuNDY5LTM0LjM1Yy0yLjM2NC0xMS4wNzQtOC4xNzMtMjAuMjg0LTE2LjM1OC0yNS45MzNhMzIuMzQsMzIuMzQsMCwwLDAtMjYuNTY2LTQuN0M5MS45MTEsMy4zMjgsODIuMjM3LDkuNDkyLDcyLjgzMSwxOS4zNDgsNjMuNDI1LDkuNDkyLDUzLjc1MSwzLjMyOCw0NC4wMzYsMS4wMWEzMi4zMzgsMzIuMzM4LDAsMCwwLTI2LjU2Nyw0LjdDOS4yODQsMTEuMzYsMy40NzUsMjAuNTcsMS4xMTEsMzEuNjQ0YTUyLjk4NSw1Mi45ODUsMCwwLDAsNC40NywzNC4zNWMxMC41NTMsMjEuMzcsMjcuOTY5LDM1LjY1LDQwLjcyMiw0My44NjhhMTI2LjU2OSwxMjYuNTY5LDAsMCwwLDI1LjQ0MiwxMi44NjMsMy40MiwzLjQyLDAsMCwwLDIuMTcyLDAsMTI2LjYwNiwxMjYuNjA2LDAsMCwwLDI1LjQ0MS0xMi44NjNDMTEyLjExMSwxMDEuNjQ1LDEyOS41MjgsODcuMzY0LDE0MC4wODEsNjUuOTk0Wk03Mi44MzIsMTE1LjcyOGMtNi44MTYtMi41ODctNDMuOS0xOC02MS4xMDYtNTIuODQ1YTQ1LjkyNyw0NS45MjcsMCwwLDEtMy45LTI5Ljc3YzEuOTYyLTkuMTg4LDYuODg3LTE3LjA4MSwxMy41MTMtMjEuNjU0YTI1LjAxOCwyNS4wMTgsMCwwLDEsMTQuNC00LjQ5MywyOC45MjUsMjguOTI1LDAsMCwxLDYuNzIuODE0YzkuMjA5LDIuMiwxOC41NjgsOC41ODksMjcuODE4LDE4Ljk5NWEzLjQ0MSwzLjQ0MSwwLDAsMCw1LjEwNiwwYzkuMjUtMTAuNDA2LDE4LjYxLTE2LjgsMjcuODE4LTE4Ljk5NWEyNS43MTEsMjUuNzExLDAsMCwxLDIxLjEyMiwzLjY3OWM2LjYyNSw0LjU3MiwxMS41NTEsMTIuNDY1LDEzLjUxMiwyMS42NTRhNDUuOTM0LDQ1LjkzNCwwLDAsMS0zLjksMjkuNzdjLTkuODE3LDE5Ljg3OS0yNi4xMzksMzMuMjcxLTM4LjEsNDEuMDA1QTEyNy4zOTQsMTI3LjM5NCwwLDAsMSw3Mi44MzIsMTE1LjcyOFoiIHN0eWxlPSJmaWxsOiMyMzI3OGMiLz48L3N2Zz4=') no-repeat left top
+    background-size: contain
 
 // fix header
 header
@@ -195,7 +245,6 @@ header
   .at-types-items
     position: absolute
     width: 100%
-    margin-top: -30px
     height: $at-types-height
   .at-type
     display: inline-block
@@ -203,8 +252,30 @@ header
     width: 49%
     min-height: 5px
     text-align: center
-    .zoomheart, .doubleheart
+    .at-popup
+      h3
+        margin-top: 0
+        color: $at-persian
+      &:after
+        position: absolute
+        content: " "
+        left: 50%
+        top: 100%
+        margin-top: -4px
+        margin-left: -4px
+        width: 9px
+        height: 9px
+        background: #fe5578
+        +border-radius(4px)
+      .at-button
+        margin: 0 auto
+    .magnifierheart, .doubleheart
       height: 240px
+      -webkit-transform: translateZ(0px)
+      animation: heartBreake 1.5s ease 2
+      &:hover
+        animation: heartBreake 1.5s ease infinite
+        cursor: pointer
     .at-type-wtf
       position: relative
       padding: $at-action-padding
@@ -229,8 +300,6 @@ header
       color: #fff
       font-weight: 300
       font-size: 300%
-  .at-type-popup
-    display: none
   .at-type-prices
     position: absolute
     bottom: 0
@@ -368,7 +437,7 @@ header
           margin-top: 0
           font-size: $f-size-big
 .at-form
-  min-height: 600px
+  min-height: 390px
   padding-top: 200px
   h2
     margin-top: 60px
@@ -440,3 +509,9 @@ header
       border: 0
       font-size: $f-size-normal
       cursor: pointer
+.at-map-header
+  h2
+    font-size: 250%
+.at-map
+  height: 80vh
+  width: 100%

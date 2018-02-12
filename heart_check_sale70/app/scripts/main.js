@@ -1,9 +1,20 @@
-window.onload = function() {
+// px to vh > to px
+function vh(px) {
+    var curSc = window.innerHeight || document.documentElement.clientHeight;
+    var vh = (px / curSc) * 100;
+    return vh;
+}
+function px(vh) {
+    var curSc = window.innerHeight || document.documentElement.clientHeight;
+    var px = (curSc * vh) / 100;
+    return px + 'px';
+}
 
+window.onload = function() {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////// vanilla functions ////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ ////////////////////////////////////////////
     function at_app () {
 
         var prlxAD = document.getElementById('atCardio');
@@ -11,109 +22,102 @@ window.onload = function() {
         var prlxTD = document.getElementById('atMainS');
         var prlxTC = document.getElementById('atTypesContainer');
 
-        // elements
+        // elements birth
         var elementsProp = {};
-        // elements properties
 		elementsProp.headerTop = document.getElementById('atHeader').offsetHeight;
-        function elements_init() {
-            elementsProp.typesTop = prlxAD.offsetTop - elementsProp.headerTop;
+        function elementsInitResize() {
+            elementsProp.typesTop = prlxAD.offsetTop - 20 - elementsProp.headerTop;
             elementsProp.pricesTop = document.getElementById('atTypePrices').offsetTop;
             // elements init
             prlxTC.style.top = elementsProp.typesTop + 'px';
         }
-        elements_init();
+        elementsInitResize();
 
         // prlx
         var prlxProp = {};
-        // prlx properties
 			prlxProp.lastScroll = 0;
-			prlxProp.primPosAD = 62;
-        	prlxProp.primPosTD = parseInt(cssStyle(prlxTD, 'background-position-y'));
-        	prlxProp.primPosQD = parseInt(cssStyle(prlxQD, 'background-position-y'));
-		console.log(prlxProp.primPosAD);
-        console.log(prlxProp.primPosTD);
-        console.log(prlxProp.primPosQD);
-		// prlx computation
+			prlxProp.primPos_AD = vh(parseInt(cssStyle(prlxAD, 'margin-top')));
+        	prlxProp.primPos_TD = parseInt(cssStyle(prlxTD, 'background-position-y'));
+        	prlxProp.primPos_QD = parseInt(cssStyle(prlxQD, 'background-position-y'));
         function prlx() {
-            // init prlx
             prlxProp.scrolledHeight = window.pageYOffset || document.documentElement.scrollTop;
-            // atCardio V
-            prlxAD.style.marginTop = prlxProp.primPosAD + prlxProp.scrolledHeight / -43.99 + 'vh';
-            // atMainS V
-            prlxTD.style.backgroundPositionY = prlxProp.primPosTD + prlxProp.scrolledHeight / 6.99 + 'px';
-            // atTypesContainer V
+
+            prlxAD.style.marginTop = prlxProp.primPos_AD + prlxProp.scrolledHeight / -43.99 + 'vh'; // atCardio
+            prlxTD.style.backgroundPositionY = prlxProp.primPos_TD + prlxProp.scrolledHeight / 6.99 + 'px'; // atMainS
             if (prlxTC.offsetTop <= elementsProp.pricesTop - prlxTC.offsetHeight) {
-                prlxTC.style.top = elementsProp.typesTop + prlxProp.scrolledHeight / 4.99 + 'px';
+                prlxTC.style.top = elementsProp.typesTop + prlxProp.scrolledHeight / 4.69 + 'px'; // atTypesContainer
             }
             if (prlxProp.scrolledHeight < prlxProp.lastScroll) {
                 if (prlxTC.offsetTop > elementsProp.pricesTop - prlxTC.offsetHeight) {
-                    prlxTC.style.top = prlxTC.offsetTop - ( Math.abs( prlxTC.offsetTop - (elementsProp.pricesTop - prlxTC.offsetHeight) ) ) + 'px';
+                    prlxTC.style.top = prlxTC.offsetTop - ( Math.abs( prlxTC.offsetTop - (elementsProp.pricesTop - prlxTC.offsetHeight) ) ) + 'px'; // atTypesContainer
                 }
             }
-            // atQuestor V
             if ((prlxProp.scrolledHeight + window.innerHeight) > prlxQD.offsetTop) {
-                prlxQD.style.backgroundPositionY = prlxProp.primPosQD + prlxProp.scrolledHeight / 6 + 'px';
+                prlxQD.style.backgroundPositionY = prlxProp.primPos_QD + prlxProp.scrolledHeight / 6 + 'px'; // atQuestor
             }
-            // exit prlx
+
             prlxProp.lastScroll = prlxProp.scrolledHeight;
         }
 
+        // utility //
+        // ↓↓↓↓↓↓↓↓ //
         // computed style
-		function cssStyle (element, property) {
+		function cssStyle(element, property) {
             return window.getComputedStyle(element).getPropertyValue(property);
         }
-        // VH recalculating
-        function vh(v) {
-            var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-            return (v * h) / 1000;
-        }
-
-        /// /// /// /// ///
-        // global events //
-		// V V V V V V V //
+        // events //
+		// ↓↓↓↓↓↓↓ //
         window.addEventListener('scroll', function() {
 			prlx();
         });
         function resize() {
-            elements_init();
+            elementsInitResize();
         }
         window.onresize = resize;
 
     };
 
-    /// /// /// ///
-    //  run app  //
-    // V V V V V //
+    // run //
+    // ↓↓↓ //
     at_app();
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////// jQuery plugins /////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	// smooth scrolling for anchors
-	$('a[href^="#"]').on('click', function(event) {
-		var target = $(this.getAttribute('href'));
-		if( target.length ) {
-			event.preventDefault();
-			$('html, body').stop().animate({
-				scrollTop: target.offset().top - 89
-			}, 1000);
-		}
-	});
-
+    ///////////////////////////////////////// jQuery functions ////////////////////////////////////////////
+    ///////////////////////////////////////// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ ////////////////////////////////////////////
+    // smooth scrolling for anchors
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        var cor = 0;
+        if( target.length ) {
+            event.preventDefault();
+            if (target.attr('id') === 'heartPictureTarget') {
+            	cor = 270
+			}
+            if (target.attr('id') === 'gogo') {
+                $('#name').focus();
+            }
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - cor
+            }, 1000);
+        }
+    });
+    // popups
+	$('.at-show-popup').on('click', function () {
+		var popupTarget = $(this).data('popupTarget');
+		$('.at-popup').removeClass('show');
+		$('.at-popup.' + popupTarget).toggleClass('show');
+    })
+    $('.at-popup-close').on('click', function () {
+        $('.at-popup').removeClass('show');
+    })
 	// go form masks
 	$('#telephone').mask('+99999999999');
-
 	// go form validate
 	 $('#at-invite').validate({
 		rules: {
 			'name': 'required',
-			'lastname': 'required',
-			'email': 'email',
 			'telephone': 'required',
-			'company': 'required',
-			'work': 'required'
 		},
 		submitHandler: function(form) {
 			$.ajax({

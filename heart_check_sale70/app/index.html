@@ -24,7 +24,7 @@
             <use xlink:href="/images/atlant.svg?#logotype" />
           </svg>
         </div>
-        <div class="at-contacts"><span class="telephone">+7 (812) 982-16-90</span><a href="#go" class="at-button">Записаться на прием</a></div>
+        <div class="at-contacts"><span class="telephone">+7 (812) 982-16-90</span><a href="#gogo" class="at-button">Записаться на прием</a></div>
       </div>
     </header>
     <article id="atMainS" class="at-section at-types">
@@ -39,31 +39,55 @@
       <div id="atTypesContainer" class="at-types-items">
         <div class="at-main-width">
           <div class="at-type">
-            <svg class="at-sprite zoomheart">
-              <use xlink:href="/images/atlant.svg?#zoomheart" />
-            </svg>
-            <h2>Комплексное</h2>
-            <a class="at-button at-type-wtf" data-get-desc-for="complex">Список исследований</a>
+            <a href="#heartPictureTarget">
+              <svg class="at-sprite magnifierheart">
+                <use xlink:href="/images/atlant.svg?#magnifierheart" />
+              </svg>
+            </a>
+            <h2 id="heartPictureTarget">Комплексное</h2>
+            <a class="at-button at-type-wtf at-show-popup" data-popup-target="complex">Список исследований</a>
             <div class="at-popup at-type-popup complex">
-              <ul>
-                <li>Прием у кардиолога высшей категории;</li>
-                <li>Электрокардиография (ЭКГ) сердца с расшифровкой;</li>
-                <li>Составление плана лечения.</li>
-              </ul>
+              <div class="at-popup-content">
+                <svg class="at-sprite at-popup-close">
+                  <use xlink:href="/images/atlant.svg?#close" />
+                </svg>
+                <h3>Комплексное обследование</h3>
+                <ul>
+                  <li>Прием у кардиолога высшей категории;</li>
+                  <li>Электрокардиография (ЭКГ) сердца с расшифровкой;</li>
+                  <li>Составление плана лечения.</li>
+                </ul>
+                <div class="at-popup-footer">
+                  <a href="#gogo" class="at-button" onclick="$('.at-popup').removeClass('show')">Записаться на прием</a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="at-type">
-            <svg class="at-sprite doubleheart">
-              <use xlink:href="/images/atlant.svg?#doubleheart" />
-            </svg>
+            <a href="#heartPictureTarget">
+              <svg class="at-sprite doubleheart">
+                <use xlink:href="/images/atlant.svg?#doubleheart" />
+              </svg>
+            </a>
             <h2>Расширенное</h2>
-            <a class="at-button at-type-wtf" data-get-desc-for="extended">Список исследований</a>
+            <a class="at-button at-type-wtf at-show-popup" data-popup-target="extended">Список исследований</a>
             <div class="at-popup at-type-popup extended">
-              <ul>
-                <li>Прием у кардиолога высшей категории;</li>
-                <li>Электрокардиография (ЭКГ) сердца с расшифровкой;</li>
-                <li>Составление плана лечения.</li>
-              </ul>
+              <div class="at-popup-content">
+                <svg class="at-sprite at-popup-close">
+                  <use xlink:href="/images/atlant.svg?#close" />
+                </svg>
+                <h3>Расширенное обследование</h3>
+                <ul>
+                  <li>Прием у кардиолога высшей категории;</li>
+                  <li>Электрокардиография (ЭКГ) с нагрузочным тестом (проба Мартинэ);</li>
+                  <li>Анализ крови на липидный профиль (триглицериды, холестерин общий, холестерин ЛПВП (липопротеины
+                  высокой плотности), холестерин ЛПНП (липопротеины низкой плотности));</li>
+                  <li>Составление плана лечения.</li>
+                </ul>
+                <div class="at-popup-footer">
+                  <a href="#gogo" class="at-button" onclick="$('.at-popup').removeClass('show')">Записаться на прием</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -142,7 +166,7 @@
         </div>
       </div>
     </article>
-    <div class="at-section at-form">
+    <div id="gogo" class="at-section at-form">
       <div class="at-main-width">
         <h2 class="at-text-red">Запишитесь на прием</h2>
         <form id="at-invite" method="post" class="at-invite">
@@ -172,11 +196,225 @@
         </form>
       </div>
     </div>
+    <div class="at-map-header at-main-width">
+      <h2>Найдите нас</h2>
+    </div>
+    <div id="atMap" class="at-section at-map">
+
+    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script>
+        function initMap() {
+            var atPoint = new google.maps.LatLng(59.8995664,30.2759627);
+            var map = new google.maps.Map(document.getElementById('atMap'), {
+                zoom: 17,
+                center: atPoint,
+                disableDefaultUI: true,
+                styles: [
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [
+                            {
+                                "color": "#000000"
+                            },
+                            {
+                                "lightness": 13
+                            },
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#000000"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#144b53"
+                            },
+                            {
+                                "lightness": 14
+                            },
+                            {
+                                "weight": 1.4
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "saturation": "44"
+                            },
+                            {
+                                "visibility": "on"
+                            },
+                            {
+                                "color": "#0066b3"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "lightness": "16"
+                            },
+                            {
+                                "saturation": "3"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "gamma": "0.00"
+                            },
+                            {
+                                "lightness": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "gamma": "6.13"
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#0c4152"
+                            },
+                            {
+                                "lightness": 5
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#000000"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#0b434f"
+                            },
+                            {
+                                "lightness": 25
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#000000"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#0b3d51"
+                            },
+                            {
+                                "lightness": 16
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.local",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#000000"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#146474"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#021019"
+                            }
+                        ]
+                    }
+                ]
+            });
+            var markerImage = {
+                url: 'images/point.svg',
+                anchor: new google.maps.Point(44,140),
+                scaledSize: new google.maps.Size(87,140)
+            };
+            var marker = new google.maps.Marker({
+                position: atPoint,
+                map: map,
+                icon: markerImage
+            });
+            google.maps.event.addListener(map, 'zoom_changed', function() {
+                marker.setIcon(markerImage);
+            })
+        }
+    </script>
+    <script async defer
+        src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyClz297kC9dpUoA-5cWNbOX_SlN0XtG6X0&callback=initMap'>
+    </script>
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
