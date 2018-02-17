@@ -53,6 +53,8 @@ $at-pink: #fe5578
 
 // atlant font-size cheme
 $f-size: 18px
+$f-size-phablet: 16px
+$f-size-mobile: 14px
 $f-size-bigest: 260%
 $f-size-big: 161%
 $f-size-mid: 107%
@@ -70,10 +72,12 @@ body
   font-family: 'Open Sans', sans-serif
   font-size: $f-size
   color: #000
-  @inlcude mobile
+  @include device-phablet
     -webkit-overflow-scrolling: touch
-  @inlcude mobile-small
+    font-size: $f-size-phablet
+  @include device-mobile
     -webkit-overflow-scrolling: touch
+    font-size: $f-size-mobile
 input
   font-family: 'Open Sans', sans-serif
 
@@ -233,10 +237,15 @@ header
   h1
     margin: 0
     height: 165px
+    line-height: 165px
     font-size: 250%
+    text-align: center
     background: rgba(255,255,255,0.7)
     .at-main-width
-      padding-top: 19px
+      display: inline-block
+      text-align: left
+      line-height: 48px
+      vertical-align: middle
   .at-heartBeats
     position: relative
     margin-top: 62vh
