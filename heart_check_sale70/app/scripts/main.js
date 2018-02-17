@@ -22,11 +22,20 @@ window.onload = function() {
         var prlxTD = document.getElementById('atMainS');
         var prlxTC = document.getElementById('atTypesContainer');
 
+        var mobile = false;
+
         // elements birth
         var elementsProp = {};
 		elementsProp.headerTop = document.getElementById('atHeader').offsetHeight;
         function elementsInitResize() {
-            elementsProp.typesTop = prlxAD.offsetTop - 20 - elementsProp.headerTop;
+            if (Math.max(window.innerWidth || document.documentElement.clientWidth) < 800) {
+                mobile = true;
+            }
+            if (mobile === false) {
+                elementsProp.typesTop = prlxAD.offsetTop - 20 - elementsProp.headerTop;
+            } else {
+                elementsProp.typesTop = prlxAD.offsetTop + 40 - elementsProp.headerTop;
+            }
             elementsProp.pricesTop = document.getElementById('atTypePrices').offsetTop;
             // elements init
             prlxTC.style.top = elementsProp.typesTop + 'px';
@@ -44,12 +53,14 @@ window.onload = function() {
 
             prlxAD.style.marginTop = prlxProp.primPos_AD + prlxProp.scrolledHeight / -43.99 + 'vh'; // atCardio
             prlxTD.style.backgroundPositionY = prlxProp.primPos_TD + prlxProp.scrolledHeight / 6.99 + 'px'; // atMainS
-            if (prlxTC.offsetTop <= elementsProp.pricesTop - prlxTC.offsetHeight) {
-                prlxTC.style.top = elementsProp.typesTop + prlxProp.scrolledHeight / 4.69 + 'px'; // atTypesContainer
-            }
-            if (prlxProp.scrolledHeight < prlxProp.lastScroll) {
-                if (prlxTC.offsetTop > elementsProp.pricesTop - prlxTC.offsetHeight) {
-                    prlxTC.style.top = prlxTC.offsetTop - ( Math.abs( prlxTC.offsetTop - (elementsProp.pricesTop - prlxTC.offsetHeight) ) ) + 'px'; // atTypesContainer
+            if (mobile === false) {
+                if (prlxTC.offsetTop <= elementsProp.pricesTop - prlxTC.offsetHeight) {
+                    prlxTC.style.top = elementsProp.typesTop + prlxProp.scrolledHeight / 4.69 + 'px'; // atTypesContainer
+                }
+                if (prlxProp.scrolledHeight < prlxProp.lastScroll) {
+                    if (prlxTC.offsetTop > elementsProp.pricesTop - prlxTC.offsetHeight) {
+                        prlxTC.style.top = prlxTC.offsetTop - ( Math.abs(prlxTC.offsetTop - (elementsProp.pricesTop - prlxTC.offsetHeight)) ) + 'px'; // atTypesContainer
+                    }
                 }
             }
             if ((prlxProp.scrolledHeight + window.innerHeight) > prlxQD.offsetTop) {
