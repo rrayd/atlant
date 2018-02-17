@@ -48,6 +48,8 @@ $at-action-padding: 11px 26px
 $at-blue: #0066b3
 $at-red: #de0518
 $at-persian: #23278c
+$at-multiply: #0066b3 // original #0E336F
+$at-pink: #fe5578
 
 // atlant font-size cheme
 $f-size: 18px
@@ -234,14 +236,14 @@ header
     margin-top: 62vh
     width: 100%
     height: 10000px
-    background-color: #0E336F
+    background-color: $at-multiply
     mix-blend-mode: multiply
     .at-heartBeatsTop
       position: absolute
       bottom: 100%
       width: 100%
       height: 64px
-      background: url('data:image/svg+xml;base64,PHN2ZyBpZD0iYmVhdHMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDYyIDUzLjE0MyI+PHRpdGxlPmJlYXRzPC90aXRsZT48cGF0aCBkPSJNNjIsNTMuMTQzYy0uODg2LDAtMS44NTYtNi0yLjA0MS05LjE0MkM1OS4yMzksMzEuNzc4LDU3LjIzLDAsNTUuOCwwYy0xLjc3MSwwLTMuNTQzLDM4LjA4Ni0zLjU0MywzOC45NzFzLS44ODYtLjg4NS0xLjc3MS0yLjY1Ny0xLjc3Mi0xLjc3MS0xLjc3Mi0xLjc3MUg0NS4xNzFjLS44ODUsMC0xLjc3MS01LjMxNC0yLjY1Ny01LjMxNHMtMi42NTcsNS4zMTQtMi42NTcsNS4zMTRIMjQuOGE5Ljc4MSw5Ljc4MSwwLDAsMC02LjItMi42NTcsOS43ODEsOS43ODEsMCwwLDAtNi4yLDIuNjU3SDIuNjU3Yy0uODg2LDAtLjg4NiwzLjU0My0uODg2LDguODU3QTI5LjI0NiwyOS4yNDYsMCwwLDEsMCw1My4xNDNaIiBzdHlsZT0iZmlsbDojMGUzMzZmIi8+PC9zdmc+') repeat-x bottom left 0
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 53.143"><title>beats</title><path d="M62,53.143c-.886,0-1.856-6-2.041-9.142C59.239,31.778,57.23,0,55.8,0c-1.771,0-3.543,38.086-3.543,38.971s-.886-.885-1.771-2.657-1.772-1.771-1.772-1.771H45.171c-.885,0-1.771-5.314-2.657-5.314s-2.657,5.314-2.657,5.314H24.8a9.781,9.781,0,0,0-6.2-2.657,9.781,9.781,0,0,0-6.2,2.657H2.657c-.886,0-.886,3.543-.886,8.857A29.246,29.246,0,0,1,0,53.143Z" style="fill:' + $at-multiply + '"/></svg>') repeat-x bottom left 0
   .at-types-items
     position: absolute
     width: 100%
@@ -265,7 +267,7 @@ header
         margin-left: -4px
         width: 9px
         height: 9px
-        background: #fe5578
+        background: $at-pink
         +border-radius(4px)
       .at-button
         margin: 0 auto
@@ -279,14 +281,14 @@ header
     .at-type-wtf
       position: relative
       padding: $at-action-padding
-      border: 1px solid #fe5578
-      background-color: transparent
-      color: #fe5578
+      // border: 1px solid $at-pink
+      background-color: $at-pink
+      color: #ffffff
       cursor: pointer
       +border-radius(4px)
       +transition(all 0.3s ease)
       &:hover
-        background-color: #fe5578
+        background-color: $at-pink
         color: #ffffff
       &:after
         position: absolute
@@ -295,7 +297,7 @@ header
         left: 50%
         height: 10000px
         width: 1px
-        background-color: #fe5578
+        background-color: $at-pink
     h2
       color: #fff
       font-weight: 300
@@ -338,7 +340,7 @@ header
         margin-left: -4px
         width: 9px
         height: 9px
-        background: #fe5578
+        background: $at-pink
         +border-radius(4px)
 .at-best
   h2
@@ -396,14 +398,14 @@ header
     padding-top: 40px
     width: 126%
     height: 480px
-    background-color: #0E336F
+    background-color: $at-multiply
     mix-blend-mode: multiply
   .at-healty-box-two
     margin-left: 40px
     margin-top: 0px
     width: 87%
     height: 504px
-    background-color: #0E336F
+    background-color: $at-multiply
     mix-blend-mode: multiply
   .at-healty-question
     position: absolute
@@ -455,7 +457,7 @@ header
       margin-bottom: 30px
       width: 47%
       height: 70px
-      background-color: #0E336F
+      background-color: $at-multiply
       mix-blend-mode: multiply
       &:last-child
         margin-left: 30px
@@ -475,7 +477,7 @@ header
       width: 97%
       height: 124%
       margin-right: 10px
-      background-color: #0E336F
+      background-color: $at-multiply
       mix-blend-mode: multiply
     .at-input-text
       position: absolute
