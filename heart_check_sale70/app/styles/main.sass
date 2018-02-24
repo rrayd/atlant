@@ -156,6 +156,10 @@ h3
   -webkit-transform: translateZ(0px)
   @include transform (scale(0))
   @include transition(all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1))
+  @include device-micromobile
+    top: -149px
+    bottom: -128px
+    z-index: 66
   &.show
     @include transform (scale(1))
     opacity: 1
@@ -180,6 +184,8 @@ h3
     margin: 0
     padding: 0
     font-size: $f-size-normal
+    @include device-micromobile
+      font-size: 80%
   li
     position: relative
     list-style: none
@@ -226,10 +232,10 @@ header
     line-height: $at-header-height
     .telephone
       margin: 0 40px 0 0
-      color: $at-persian
+      color: $at-blue
       vertical-align: middle
       a
-        color: $at-persian
+        color: $at-blue
         text-decoration: none
         @include device-phablet
           color: $at-blue
@@ -297,10 +303,12 @@ header
     width: 49%
     min-height: 5px
     text-align: center
+    @include device-micromobile
+      position: static
     .at-popup
       h3
         margin-top: 0
-        color: $at-persian
+        color: $at-blue
       &:after
         position: absolute
         content: " "
@@ -367,12 +375,15 @@ header
       display: inline-block
       width: 16px
       height: 23px
+      @include device-micromobile
+        height: 16px
     .pricenew
       padding-left: 30px
       font-weight: 400
       font-size: 320%
       @include device-micromobile
         font-size: 190%
+        padding-left: 2px
     .priceold
       position: relative
       width: 76px
@@ -397,16 +408,23 @@ header
         height: 9px
         background: $at-pink
         +border-radius(4px)
+        @include device-micromobile
+          left: inherit;
 .at-best
   h2
     margin-top: 60px
     font-size: 250%
+    @include device-micromobile
+      margin-top: 31px
+      font-size: 100%
   .at-main-width
     width: 64%
     @include device-phablet
       width: 90%
     @include device-mobile
       width: 90%
+    @include device-micromobile
+      width: 94%
   .at-main-md
     position: relative
     display: inline-block
@@ -416,6 +434,9 @@ header
     background-size: cover
     vertical-align: top
     +border-radius(120px)
+    @include device-micromobile
+      width: 100%
+      +border-radius(0px)
     span
       width: 100%
       position: absolute
@@ -428,8 +449,14 @@ header
     min-height: 280px
     padding: 5px 0 0 30px
     vertical-align: top
+    @include device-micromobile
+      margin-top: 40px
+      padding: 0
+      width: 100%
     h3
       margin-top: 0
+      @include device-micromobile
+        font-size: 100%
     p
       padding: 0
       margin: 0 0 7px 0
@@ -451,6 +478,8 @@ header
     width: 64%
     @include device-mobile
       margin-top: 30px
+    @include device-micromobile
+      width: 100%
   .at-healty-boxes
     position: absolute
     left: 247px
@@ -464,6 +493,10 @@ header
     @include device-mobile
       left: -24%
       width: 136%
+    @include device-micromobile
+      left: 0
+      min-width: inherit
+      width: 100%
   .at-healty-box-one
     margin-left: -40px
     margin-top: -40px
@@ -476,6 +509,9 @@ header
       height: 400px
     @include device-mobile
       height: 402px
+    @include device-micromobile
+      width: 100%
+      margin-left: 0
   .at-healty-box-two
     margin-left: 40px
     margin-top: 0px
@@ -487,6 +523,9 @@ header
       height: 445px
     @include device-mobile
       height: 455px
+    @include device-micromobile
+      margin-left: 0
+      width: 100%
   .at-healty-question
     position: absolute
     left: 274px
@@ -503,6 +542,10 @@ header
       left: -55px
       width: 115%
       height: 400px
+    @include device-micromobile
+      left: 3%
+      width: 96%
+      min-width: inherit
     p
       font-size: 81%
       @include device-mobile
@@ -518,6 +561,9 @@ header
         @include device-mobile
           width: 100%
           text-align: right
+        @include device-micromobile
+          bottom: -110px
+          color: $at-blue
     .clocks
       display: inline-block
       width: 170px
@@ -527,6 +573,12 @@ header
         margin: 3px 0 0 62px
         width: 160px
         height: 160px
+      @include device-micromobile
+        position: absolute
+        bottom: -37px
+        right: 3%
+        width: 64px
+        height: 64px
     .time
       display: inline-block
       width: 77%
@@ -534,6 +586,8 @@ header
       vertical-align: top
       @include device-mobile
         width: 46%
+      @include device-micromobile
+        font-size: 80%
       p
         font-size: 100%
         strong
@@ -553,6 +607,10 @@ header
     margin-top: 60px
     margin-bottom: 30px
     font-size: 250%
+    @include device-micromobile
+      margin-top: 32px
+      text-align: center
+      font-size: 140%
   .req
     margin-bottom: 40px
     font-size: 80%
@@ -586,6 +644,9 @@ header
         background-color: $at-red
         color: #ffffff
         padding: 21px
+        @include device-micromobile
+          top: -20px
+          padding: 10px
     .at-input-deco
       position: absolute
       left: 1%
@@ -607,6 +668,9 @@ header
       font-size: 200%
       border: 0
       text-align: center
+      @include device-micromobile
+        font-size: 160%
+        top: 14px
   .at-submit-container
     position: absolute
     right: 56px
@@ -642,6 +706,8 @@ header
         position: absolute
         top: 100%
         left: 0
+        @include device-micromobile
+          position: static
     .at-input-container
       display: inline-block
       vertical-align: middle
@@ -651,6 +717,10 @@ header
 .at-map-header
   h2
     font-size: 250%
+    @include device-micromobile
+      margin-top: 32px
+      text-align: center
+      font-size: 140%
 .at-map
   height: 80vh
   width: 100%
