@@ -72,6 +72,18 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('unless', ['styles', 'scripts', 'u_images'], () => {
+    return gulp.src('app/*.html')
+        .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
+        .pipe(gulp.dest('unless'));
+});
+
+gulp.task('u_images', () => {
+    return gulp.src('app/images/**/*')
+        .pipe($.cache($.imagemin()))
+        .pipe(gulp.dest('unless/images'));
+});
+
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin()))
