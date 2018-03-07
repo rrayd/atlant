@@ -15,8 +15,8 @@
 
         //Recipients
         $mail->setFrom('autoreply@atlasprof.info', 'Atlant no-reply');
-        $mail->addAddress("romanova@atlasprof.info", 'Романова Наталия');           // Add a recipient
-        $mail->addAddress("program@atlasprof.info", 'Irina Lozovan');               // Add a recipient
+        $mail->addAddress("marketing@atlasprof.info", 'Игорь');                    // Add a recipient
+        $mail->addAddress("nakovaina89@gmail.com", 'Dmitry');               // Add a recipient
 
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
