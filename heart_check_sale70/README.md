@@ -1,29 +1,35 @@
 # Atlant 🚑
 medical pages
 
-## Must have for this app
+## Необходимо установить для сборщика
 * node.js [install](https://nodejs.org/en/download/)
 * ruby (for sass) [install](https://www.ruby-lang.org/en/downloads/)
-* gulp [install](https://www.npmjs.com/package/gulp)
+* gulp (глобально) в node.js command prompt напишите `npm i -g gulp`
 
-## After repository clone
-
-### First local deployment
-Go to your local repository folder from node command promt and
+### Установка сборщика
+Запустите node.js command prompt, перейдите в директорию проекта, напишите:
 ```terminal
 npm install
-gulp serve
 ```
 
-### Edit local
-Run gulp with watch your changes and update browser view 
+### Режим разработчика
+Запустите node.js command prompt, перейдите в директорию проекта, напишите:
 ```terminal
 gulp serve
 ```
-Enjoy! Your app files folder `/app/`
+Изменения файлов в директории `/app` автоматически синхронизируются с браузером.
+`/app` : здесь находится исходный неинтерпретированный код Вашего лэндинга.
+Для стилей используется sass https://sass-scss.ru
 
-### Build and publish
+### Сборка без интепретации (pre-production)
+```terminal
+gulp unless
+```
+Будет создана директория `/unless`
+
+### Сборка минифицированная (production)
 ```terminal
 gulp build
 ```
-Your build destination folder `/dist/`
+Будет создана директория `/dist`
+
