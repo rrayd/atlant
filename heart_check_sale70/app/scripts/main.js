@@ -128,14 +128,18 @@ window.onload = function() {
 			'telephone': 'required',
 		},
 		submitHandler: function(form) {
-			$.ajax({
-				type: 'POST',
-				url: 'al_invite.php',
-				data: $(form).serialize(),
-				timeout: 3000,
-				success: function() {console.log('send mail');},
-				error: function() {console.log('ERROR SENDING');}
-			});
+            $.ajax({
+                type: 'POST',
+                url: 'al_invite.php',
+                data: $(form).serialize(),
+                timeout: 3000,
+                success: function(response){
+                    console.log(response);
+                },
+                error: function(err){
+                    console.error(err);
+                }
+            });
 			return false;
 	  }
 	});
