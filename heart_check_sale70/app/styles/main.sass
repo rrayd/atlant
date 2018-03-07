@@ -656,6 +656,8 @@ header
       margin-right: 10px
       background-color: rgba($at-multiply, 0.1)
       mix-blend-mode: multiply
+      @include device-micromobile
+        height: 67px
     .at-input-text
       position: absolute
       top: 10px
@@ -669,7 +671,7 @@ header
       border: 0
       text-align: center
       @include device-micromobile
-        font-size: 160%
+        font-size: 130%
         top: 14px
   .at-submit-container
     position: absolute

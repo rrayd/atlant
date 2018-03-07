@@ -105,11 +105,8 @@ window.onload = function() {
             if (target.attr('id') === 'heartPictureTarget') {
             	cor = 270
 			}
-            if (target.attr('id') === 'gogo') {
-                $('#name').focus();
-            }
             $('html, body').stop().animate({
-                scrollTop: target.offset().top - cor
+                scrollTop: target.offset().top - cor - 90
             }, 1000);
         }
     });
@@ -136,8 +133,8 @@ window.onload = function() {
 				url: 'al_invite.php',
 				data: $(form).serialize(),
 				timeout: 3000,
-				success: function() {alert('works');},
-				error: function() {alert('failed');}
+				success: function() {console.log('send mail');},
+				error: function() {console.log('ERROR SENDING');}
 			});
 			return false;
 	  }
